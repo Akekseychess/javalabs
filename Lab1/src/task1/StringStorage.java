@@ -5,23 +5,55 @@ import java.util.Arrays;
 public class StringStorage {
 	private String[] mStringArray;
 
-	public StringStorage(String[] mStringArray) {
-		set(mStringArray);
+	public StringStorage(int size) {
+		mStringArray = new String[size];
 	}
-	
-	public String get(){
-		StringBuilder result =  new StringBuilder();
-		
+
+	public StringStorage(String[] mStringArray) {
+		this.mStringArray = Arrays.copyOf(mStringArray, mStringArray.length);
+	}
+
+	public String get(int index) {
+		return mStringArray[index];
+	}
+
+	public void set(int index, String value) {
+		mStringArray[index] = value;
+	}
+
+	public void set(String[] mStringArray) {
+		this.mStringArray = Arrays.copyOf(mStringArray, mStringArray.length);
+	}
+
+	public String getConcatedString() {
+		StringBuilder result = new StringBuilder();
+
 		int i;
-		for (i = 0; i < mStringArray.length -1; i++)
+		for (i = 0; i < mStringArray.length - 1; i++)
 			result.append(mStringArray[i] + " ");
 		if (i < mStringArray.length)
 			result.append(mStringArray[i]);
-		
+
 		return result.toString();
 	}
 	
-	public void set(String[] mStringArray){
-		this.mStringArray = Arrays.copyOf(mStringArray, mStringArray.length);
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof StringStorage)) 
+			return false;
+		
+		StringStorage secondObj = (StringStorage) obj;
+		return Arrays.equals(mStringArray, secondObj.mStringArray);
 	}
+	
+	@Override
+	public String toString() {
+	    StringBuilder result = new StringBuilder();
+	    final String NEW_LINE = System.getProperty("line.separator");
+	    result.append(getClass().getName() + " Object {" + NEW_LINE);
+	    result.append(" mStringArray: " + mStringArray.toString() + NEW_LINE);
+	    result.append("}");
+	    return result.toString();
+	}
+
 }

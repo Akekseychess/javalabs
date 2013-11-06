@@ -2,8 +2,26 @@ package task3;
 
 public class MistakeCorrector {
 
-	public static void main(String[] args) {
-		String text = "pasdfsdf sdfpaSDFDSF sdfsdfpa";
-		System.out.print(text.replaceAll("pa[^\b]", "po"));
+	private String text;
+
+	public MistakeCorrector(final String text) {
+		this.text = text;
+	}
+
+	public void correct() {
+		text=text.replaceAll("pa", "po");
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	@Override
+	public String toString() {
+		return text;
 	}
 }

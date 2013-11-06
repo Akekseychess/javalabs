@@ -2,7 +2,7 @@ package visitorPattern;
 
 import java.util.Arrays;
 
-public class Film implements Loadable{
+public class Film implements Loadable {
 	private String name;
 	private String producedBy;
 	private String[] cast;

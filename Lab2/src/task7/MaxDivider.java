@@ -1,6 +1,6 @@
 package task7;
 
-public class MaxDevider {
+public class MaxDivider {
 	public static void main(String[] args) {
 		System.out.print(maxDevider(50, 20));
 	}

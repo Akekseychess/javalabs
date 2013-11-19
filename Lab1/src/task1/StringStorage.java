@@ -3,6 +3,7 @@ package task1;
 import java.util.Arrays;
 
 public class StringStorage {
+	
 	private String[] mStringArray;
 
 	public StringStorage(int size) {

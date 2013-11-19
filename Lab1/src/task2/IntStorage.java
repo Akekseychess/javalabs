@@ -34,10 +34,6 @@ public class IntStorage {
 	}
 
 	private int[] getDividedBy(int devider) {
-		if (devider != 5 || devider != 10)
-			throw new IllegalArgumentException("can't get devided by "
-					+ devider);
-
 		int devidedCounter = 0;
 		for (int number : mArray)
 			if (number % devider == 0)
@@ -49,7 +45,7 @@ public class IntStorage {
 			if (mArray[i] % devider == 0)
 				result[devidedCounter++] = mArray[i];
 
-		return mArray;
+		return result;
 	}
 
 	@Override

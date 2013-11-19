@@ -1,18 +1,29 @@
 package task1;
 
 import java.util.Arrays;
-
+/**
+ *  @author Rostyslav Roshak
+ */
 public class StringStorage {
 	private String[] mStringArray;
 
+	/**
+	 * Creates String Storage of specificated size
+	 * @param size
+	 * size of string storage
+	 */
 	public StringStorage(int size) {
 		mStringArray = new String[size];
 	}
 
+	/**
+	 * Creates String Storage from String Array
+	 * @param mStringArray 
+	 */
 	public StringStorage(String[] mStringArray) {
 		this.mStringArray = Arrays.copyOf(mStringArray, mStringArray.length);
 	}
-
+	
 	public String get(int index) {
 		return mStringArray[index];
 	}
